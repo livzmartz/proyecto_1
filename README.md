@@ -1,2 +1,2 @@
-# DEMO MINDEF MVC
-Base para programación MVC con php del Ministerio de la Defensa
+# PROYECTO_1
+Primer proyecto de Ingenieria de software

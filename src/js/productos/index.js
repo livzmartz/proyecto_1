@@ -27,7 +27,7 @@ const guardar = async (evento) => {
 
     const body = new FormData(formulario)
     body.delete('producto_id')
-    const url = '/proyecto1/API/productos/guardar';
+    const url = '/proyecto_1/API/productos/guardar';
     const config = {
         method : 'POST',
         // body: otroNombre
@@ -73,7 +73,7 @@ const buscar = async () => {
 
     let producto_nombre = formulario.producto_nombre.value;
     let producto_precio = formulario.producto_precio.value;
-    const url = `/proyecto1/API/productos/buscar?producto_nombre=${producto_nombre}&producto_precio=${producto_precio}`;
+    const url = `/proyecto_1/API/productos/buscar?producto_nombre=${producto_nombre}&producto_precio=${producto_precio}`;
     const config = {
         method : 'GET'
     }
@@ -179,7 +179,7 @@ const modificar = async () => {
 
     const body = new FormData(formulario)
     body.append('tipo', 2)
-    const url =  `/proyecto_1/API/productos/modificar?producto_nombre=${producto_nombre}&producto_precio=${producto_precio}`;
+    const url = '/""/controladores/productos/index.php';
     const config = {
         method : 'POST',
         body
@@ -219,7 +219,7 @@ const eliminar = async (id) => {
         const body = new FormData()
         body.append('tipo', 3)
         body.append('producto_id', id)
-        const url =  `/proyecto_1/API/productos/eliminar?producto_nombre=${producto_nombre}&producto_precio=${producto_precio}`;
+        const url = '/""/controladores/productos/index.php';
         const config = {
             method : 'POST',
             body

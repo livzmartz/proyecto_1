@@ -154,8 +154,3 @@ class ProductoController{
         }
     }
 }
-
-
-
-
-}

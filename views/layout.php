@@ -26,6 +26,9 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/proyecto_1/"><i class="bi bi-house-fill me-2"></i>Inicio</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/proyecto_1/productos"></i>Productos</a>
+                    </li>
   
                     <div class="nav-item dropdown " >
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">

@@ -179,7 +179,7 @@ const modificar = async () => {
 
     const body = new FormData(formulario)
     body.append('tipo', 2)
-    const url = '/""/controladores/productos/index.php';
+    const url = '/proyecto_1/controladores/productos/index.php';
     const config = {
         method : 'POST',
         body
@@ -219,7 +219,7 @@ const eliminar = async (id) => {
         const body = new FormData()
         body.append('tipo', 3)
         body.append('producto_id', id)
-        const url = '/""/controladores/productos/index.php';
+        const url = '/proyecto_1/controladores/productos/index.php';
         const config = {
             method : 'POST',
             body

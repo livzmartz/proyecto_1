@@ -14,7 +14,7 @@ $router->get('/productos', [ProductoController::class,'index'] );
 $router->post('/API/productos/guardar', [ProductoController::class,'guardarAPI'] );
 $router->get('/API/productos/buscar', [ProductoController::class,'buscarAPI'] );
 $router->post('/API/productos/modificar', [ProductoController::class,'modificarAPI'] );
-$router->get('/API/productos/eliminar', [ProductoController::class,'eliminarAPI'] );
+$router->post('/API/productos/eliminar', [ProductoController::class,'eliminarAPI'] );
 
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador

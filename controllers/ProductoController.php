@@ -70,4 +70,92 @@ class ProductoController{
             ]);
         }
     }
+
+    public static function modificarAPI(){
+        $producto_id = $_POST['producto_id'];
+        $producto_nombre = $_POST['producto_nombre'];
+        $producto_precio = $_POST['producto_precio'];
+    
+        try {
+            // First, retrieve the product by its ID
+            $producto = Producto::find($producto_id);
+    
+            if (!$producto) {
+                echo json_encode([
+                    'mensaje' => 'Producto no encontrado',
+                    'codigo' => 0
+                ]);
+                return;
+            }
+    
+            // Update the product data with the new values
+            $producto->producto_nombre = $producto_nombre;
+            $producto->producto_precio = $producto_precio;
+    
+            // Save the changes to the database
+            $resultado = $producto->guardar();
+    
+            if ($resultado['resultado'] == 1) {
+                echo json_encode([
+                    'mensaje' => 'Registro modificado correctamente',
+                    'codigo' => 1
+                ]);
+            } else {
+                echo json_encode([
+                    'mensaje' => 'Ocurrió un error al modificar el registro',
+                    'codigo' => 0
+                ]);
+            }
+        } catch (Exception $e) {
+            echo json_encode([
+                'detalle' => $e->getMessage(),
+                'mensaje' => 'Ocurrió un error',
+                'codigo' => 0
+            ]);
+        }
+    }
+
+
+    public static function eliminarAPI(){
+        $producto_id = $_POST['producto_id'];
+    
+        try {
+            // First, retrieve the product by its ID
+            $producto = Producto::find($producto_id);
+    
+            if (!$producto) {
+                echo json_encode([
+                    'mensaje' => 'Producto no encontrado',
+                    'codigo' => 0
+                ]);
+                return;
+            }
+    
+            // Delete the product from the database
+            $resultado = $producto->eliminar();
+    
+            if ($resultado['resultado'] == 1) {
+                echo json_encode([
+                    'mensaje' => 'Registro eliminado correctamente',
+                    'codigo' => 1
+                ]);
+            } else {
+                echo json_encode([
+                    'mensaje' => 'Ocurrió un error al eliminar el registro',
+                    'codigo' => 0
+                ]);
+            }
+        } catch (Exception $e) {
+            echo json_encode([
+                'detalle' => $e->getMessage(),
+                'mensaje' => 'Ocurrió un error',
+                'codigo' => 0
+            ]);
+        }
+    }
+}
+
+
+
+
 }
